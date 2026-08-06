@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="0.1.0"
+VERSION="0.1.1"
 PROJECT_DIR="${1:-.}"
 OUTPUT_FILE="${2:-shipsentry-report.md}"
+REPORT_BASENAME="$(basename "$OUTPUT_FILE")"
 
 if [[ ! -d "$PROJECT_DIR" ]]; then
   printf 'ShipSentry: project directory not found: %s\n' "$PROJECT_DIR" >&2
@@ -37,6 +38,7 @@ search_project() {
     --exclude-dir=.gradle \
     --exclude-dir=build \
     --exclude-dir=.idea \
+    --exclude="$REPORT_BASENAME" \
     --exclude='*.png' \
     --exclude='*.jpg' \
     --exclude='*.jpeg' \

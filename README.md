@@ -1,8 +1,11 @@
 # ShipSentry
 
+[![Test](https://github.com/adamglin0/shipsentry/actions/workflows/test.yml/badge.svg)](https://github.com/adamglin0/shipsentry/actions/workflows/test.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-111310.svg)](LICENSE)
+
 ShipSentry Lite is a zero-dependency static scanner for common Android release risks. It produces a Markdown report with evidence and suggested fixes.
 
-[Open the live product page](https://adamglin0.github.io/shipsentry/) | [Download v0.1.0](https://github.com/adamglin0/shipsentry/releases/tag/v0.1.0) | [View the sample report](https://adamglin0.github.io/shipsentry/report.html)
+[Open the live product page](https://adamglin0.github.io/shipsentry/) | [Download v0.1.1](https://github.com/adamglin0/shipsentry/releases/tag/v0.1.1) | [View the sample report](https://adamglin0.github.io/shipsentry/report.html)
 
 ![ShipSentry report preview](assets/hero-report.png)
 
