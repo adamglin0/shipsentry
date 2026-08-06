@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipSentry sample report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <main>
+    <header>
+      <a href="index.html"><span>S/</span> ShipSentry</a>
+      <p>Lite report <strong>RiskySample</strong></p>
+      <time>2026-08-06 00:23 UTC</time>
+    </header>
+    <section class="summary">
+      <div><span>High</span><strong class="high">2</strong></div>
+      <div><span>Medium</span><strong class="medium">4</strong></div>
+      <div><span>Low</span><strong>2</strong></div>
+      <div><span>Total</span><strong>8</strong></div>
+    </section>
+    <section class="findings">
+      <article><span class="tag high-bg">High</span><div><h1>Release build may be debuggable</h1><code>app/build.gradle.kts:10</code></div><p>Remove debuggable behavior from release variants and verify the merged release manifest.</p></article>
+      <article><span class="tag high-bg">High</span><div><h1>Cleartext network traffic is enabled</h1><code>app/src/main/AndroidManifest.xml:2</code></div><p>Disable cleartext globally or scope an unavoidable exception to the exact development host.</p></article>
+      <article><span class="tag medium-bg">Medium</span><div><h1>Application backup is enabled</h1><code>app/src/main/AndroidManifest.xml:2</code></div><p>Define an explicit backup policy and exclude sensitive application data.</p></article>
+      <article><span class="tag medium-bg">Medium</span><div><h1>WebView exposes a JavaScript bridge</h1><code>app/src/main/java/dev/ship/risky/MainActivity.kt:10</code></div><p>Expose a minimal interface to trusted content and validate every navigation.</p></article>
+      <article><span class="tag medium-bg">Medium</span><div><h1>Release shrinking appears disabled</h1><code>app/build.gradle.kts:9</code></div><p>Enable R8, keep rules focused, and exercise critical flows in a release-like build.</p></article>
+    </section>
+    <footer>Static analysis only. Findings require human verification.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+:root { --ink:#111310; --paper:#f4f5ef; --line:#d1d4ca; --lime:#c9ff3d; --red:#ff4d35; --amber:#f2b63d; --mono:"DM Mono",monospace; --sans:"Manrope",sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 72px; background: #242721; color: var(--ink); font-family: var(--sans); }
+main { width: 1180px; margin: 0 auto; background: var(--paper); border: 1px solid #676b61; box-shadow: 0 34px 90px rgba(0,0,0,.35); }
+header { height: 76px; padding: 0 30px; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; border-bottom: 1px solid var(--ink); }
+header a { color: var(--ink); text-decoration: none; font-weight: 800; }
+header a span { color: #5c7a00; font-family: var(--mono); }
+header p { text-align: center; font: 12px var(--mono); }
+header time { text-align: right; color: #666c63; font: 11px var(--mono); }
+.summary { height: 150px; display: grid; grid-template-columns: repeat(4,1fr); background: var(--ink); color: white; }
+.summary div { display: flex; flex-direction: column; justify-content: center; padding: 28px; border-right: 1px solid #444840; }
+.summary span { color: #aeb3aa; text-transform: uppercase; font: 11px var(--mono); }
+.summary strong { margin-top: 8px; font: 500 46px var(--mono); }
+.summary .high { color: var(--red); }
+.summary .medium { color: var(--amber); }
+.findings { padding: 30px; }
+article { min-height: 120px; display: grid; grid-template-columns: 90px minmax(360px,1.1fr) 1fr; gap: 24px; align-items: center; border-bottom: 1px solid var(--line); }
+.tag { width: 70px; padding: 7px 0; text-align: center; color: var(--ink); font: 500 11px var(--mono); text-transform: uppercase; }
+.high-bg { background: var(--red); }
+.medium-bg { background: var(--amber); }
+h1 { margin: 0 0 8px; font-size: 18px; letter-spacing: 0; }
+code { color: #696f66; font: 11px var(--mono); }
+article p { color: #5e645b; font-size: 13px; line-height: 1.6; }
+footer { height: 58px; display: flex; align-items: center; padding: 0 30px; border-top: 1px solid var(--ink); color: #696f66; font: 11px var(--mono); }
+
