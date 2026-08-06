@@ -20,5 +20,5 @@ function attachCopyButton(buttonId, valueId, successLabel) {
 }
 
 attachCopyButton("copy-command", "install-command", "Copied");
+attachCopyButton("copy-action", "action-command", "Copied");
 attachCopyButton("copy-wallet", "wallet-address", "Copied");
-

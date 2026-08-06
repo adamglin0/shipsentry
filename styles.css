@@ -93,6 +93,11 @@ h2 { margin: 0; max-width: 820px; font-size: clamp(38px, 5vw, 68px); line-height
 .command-top button, .address-row button { color: inherit; background: transparent; border: 0; cursor: pointer; font: 12px var(--mono); text-decoration: underline; text-underline-offset: 4px; }
 pre { margin: 0; padding: 26px; overflow-x: auto; }
 pre code { color: #d9f99d; font: 14px/1.9 var(--mono); }
+.ci-callout { max-width: 1020px; min-height: 66px; margin-top: 12px; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border: 1px solid #4a4d47; }
+.ci-callout div { min-width: 0; display: flex; align-items: center; gap: 18px; }
+.ci-callout span { color: #a8ada4; font: 11px var(--mono); text-transform: uppercase; }
+.ci-callout code { color: var(--lime); font: 13px var(--mono); overflow-wrap: anywhere; }
+.ci-callout button { flex: 0 0 auto; color: #a8ada4; background: transparent; border: 0; cursor: pointer; font: 12px var(--mono); text-decoration: underline; text-underline-offset: 4px; }
 .steps { max-width: 1020px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #4a4d47; margin-top: 68px; }
 .steps div { display: flex; gap: 16px; padding: 30px 20px 0 0; }
 .steps span { color: var(--lime); font: 13px var(--mono); }
@@ -162,6 +167,7 @@ footer p { color: #aeb3aa; }
   .finding { grid-template-columns: 40px 1fr; gap: 12px; padding: 25px 0; }
   .finding > p { grid-column: 2; margin: 0; }
   .steps { grid-template-columns: 1fr; }
+  .ci-callout div { align-items: flex-start; flex-direction: column; gap: 6px; }
   .steps div { border-bottom: 1px solid #343732; padding-bottom: 20px; }
   .audit { grid-template-columns: 1fr; }
   .checkout { padding: 24px; }
