@@ -2,6 +2,10 @@
 
 ShipSentry Lite is a zero-dependency static scanner for common Android release risks. It produces a Markdown report with evidence and suggested fixes.
 
+[Open the live product page](https://adamglin0.github.io/shipsentry/) | [Download v0.1.0](https://github.com/adamglin0/shipsentry/releases/tag/v0.1.0) | [View the sample report](https://adamglin0.github.io/shipsentry/report.html)
+
+![ShipSentry report preview](assets/hero-report.png)
+
 ## Run the free scan
 
 ```bash
@@ -50,4 +54,3 @@ Payment address: `TSg3cFixQzkczF9BJ5DqHCnE3AP3AjRhgi`
 ## License
 
 ShipSentry Lite is released under the MIT License. The paid offer is a review service, not a software license or security certification.
-
