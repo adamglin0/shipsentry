@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical Android release security checklist for Gradle, manifests, backups, WebView, signing, logs, and R8.">
+  <meta property="og:title" content="Android release security checklist | ShipSentry">
+  <meta property="og:description" content="A focused pre-release review for the Android risks that are easy to miss.">
+  <meta property="og:image" content="assets/hero-report.png">
+  <title>Android release security checklist | ShipSentry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header checklist-header">
+    <a class="wordmark" href="index.html" aria-label="ShipSentry home"><span aria-hidden="true">S/</span> ShipSentry</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#findings">Coverage</a>
+      <a href="index.html#audit">Audit</a>
+      <a class="nav-cta" href="https://github.com/adamglin0/shipsentry">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="checklist-intro" aria-labelledby="checklist-title">
+      <p class="eyebrow">Pre-release review</p>
+      <h1 id="checklist-title">Android release security checklist</h1>
+      <p>Use this before producing a production artifact. It focuses on configuration and source-level risks that can be reviewed without uploading an app or source tree.</p>
+      <p class="checklist-note">A checked item is a review decision, not proof of security. Test the release build and get specialist review for high-impact applications.</p>
+    </section>
+
+    <section class="checklist-list" aria-label="Android release checklist">
+      <article>
+        <div class="check-number">01</div>
+        <div><h2>Release configuration</h2><p>Confirm the release variant is not debuggable, is built from the intended signing configuration, and has release-only behavior exercised in testing.</p></div>
+      </article>
+      <article>
+        <div class="check-number">02</div>
+        <div><h2>Network policy</h2><p>Disable cleartext traffic unless a documented exception is unavoidable. Restrict any exception to the exact host and environment that requires it.</p></div>
+      </article>
+      <article>
+        <div class="check-number">03</div>
+        <div><h2>Backup policy</h2><p>Set backup behavior intentionally. Exclude tokens, identifiers, and sensitive local data from every supported backup and transfer path.</p></div>
+      </article>
+      <article>
+        <div class="check-number">04</div>
+        <div><h2>WebView boundary</h2><p>Keep JavaScript bridges minimal, load only trusted content, validate navigation, and disable file access unless a tightly constrained use case requires it.</p></div>
+      </article>
+      <article>
+        <div class="check-number">05</div>
+        <div><h2>Secrets and signing</h2><p>Search the repository and build files for credentials and signing passwords. Move secrets to a managed CI secret store or untracked local configuration, then rotate exposed values.</p></div>
+      </article>
+      <article>
+        <div class="check-number">06</div>
+        <div><h2>R8 and release behavior</h2><p>Enable shrinking for the release artifact where appropriate. Exercise critical flows on a minified build and keep rules focused on the behavior that needs them.</p></div>
+      </article>
+      <article>
+        <div class="check-number">07</div>
+        <div><h2>Logs and release debt</h2><p>Make logging release-aware, ensure sensitive values never reach logs, and resolve or explicitly accept release-relevant TODO and FIXME markers.</p></div>
+      </article>
+    </section>
+
+    <section class="checklist-cta" aria-labelledby="scan-title">
+      <div>
+        <p class="eyebrow">Local check</p>
+        <h2 id="scan-title">Start with a reproducible scan.</h2>
+        <p>ShipSentry Lite checks these common patterns locally and writes a Markdown report with file-level evidence.</p>
+      </div>
+      <a class="button primary" href="scan.sh" download>Download Lite scan</a>
+    </section>
+
+    <section class="checklist-sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Primary references</h2>
+      <ul>
+        <li><a href="https://developer.android.com/privacy-and-security/security-tips">Android security best practices</a></li>
+        <li><a href="https://developer.android.com/privacy-and-security/security-config">Network security configuration</a></li>
+        <li><a href="https://developer.android.com/guide/topics/data/autobackup">Auto Backup for Apps</a></li>
+        <li><a href="https://mas.owasp.org/">OWASP Mobile Application Security</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="index.html"><span aria-hidden="true">S/</span> ShipSentry</a>
+    <p>Static review, not penetration testing or security certification.</p>
+    <a href="https://github.com/adamglin0/shipsentry">Source code</a>
+  </footer>
+</body>
+</html>
