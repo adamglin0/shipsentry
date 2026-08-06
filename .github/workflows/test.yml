@@ -24,3 +24,21 @@ jobs:
       - name: Run regression tests
         run: ./test.sh
 
+  action:
+    name: Composite action
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - id: shipsentry
+        uses: ./
+        with:
+          project-directory: sample
+          report-path: action-report.md
+      - name: Verify action report
+        env:
+          REPORT_PATH: ${{ steps.shipsentry.outputs.report-path }}
+        run: |
+          test "$REPORT_PATH" = "action-report.md"
+          grep -q '| 2 | 4 | 2 | 8 |' "$REPORT_PATH"
+

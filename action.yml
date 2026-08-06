@@ -1,0 +1,36 @@
+name: ShipSentry Lite
+description: Scan an Android project for common release configuration and source risks.
+author: ShipSentry contributors
+
+branding:
+  icon: shield
+  color: green
+
+inputs:
+  project-directory:
+    description: Path to the Android Gradle project.
+    required: false
+    default: .
+  report-path:
+    description: Path for the generated Markdown report.
+    required: false
+    default: shipsentry-report.md
+
+outputs:
+  report-path:
+    description: Path to the generated Markdown report.
+    value: ${{ steps.scan.outputs.report-path }}
+
+runs:
+  using: composite
+  steps:
+    - id: scan
+      name: Scan Android project
+      shell: bash
+      env:
+        SHIPSENTRY_PROJECT_DIRECTORY: ${{ inputs.project-directory }}
+        SHIPSENTRY_REPORT_PATH: ${{ inputs.report-path }}
+      run: |
+        "$GITHUB_ACTION_PATH/scan.sh" "$SHIPSENTRY_PROJECT_DIRECTORY" "$SHIPSENTRY_REPORT_PATH"
+        printf 'report-path=%s\n' "$SHIPSENTRY_REPORT_PATH" >> "$GITHUB_OUTPUT"
+

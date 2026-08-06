@@ -5,7 +5,7 @@
 
 ShipSentry Lite is a zero-dependency static scanner for common Android release risks. It produces a Markdown report with evidence and suggested fixes.
 
-[Open the live product page](https://adamglin0.github.io/shipsentry/) | [Download v0.1.1](https://github.com/adamglin0/shipsentry/releases/tag/v0.1.1) | [View the sample report](https://adamglin0.github.io/shipsentry/report.html)
+[Open the live product page](https://adamglin0.github.io/shipsentry/) | [Download v0.2.0](https://github.com/adamglin0/shipsentry/releases/tag/v0.2.0) | [View the sample report](https://adamglin0.github.io/shipsentry/report.html)
 
 ![ShipSentry report preview](assets/hero-report.png)
 
@@ -18,6 +18,18 @@ chmod +x scan.sh
 ```
 
 The script reads local text files only. It does not upload source code, call an API, or modify the scanned project.
+
+## Run in GitHub Actions
+
+```yaml
+- name: Scan Android release risks
+  uses: adamglin0/shipsentry@v0.2.0
+  with:
+    project-directory: .
+    report-path: shipsentry-report.md
+```
+
+The Action exposes the generated path as `steps.<id>.outputs.report-path`, so a following step can upload the Markdown report as an artifact.
 
 ## What Lite checks
 

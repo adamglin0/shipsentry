@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="0.1.1"
+VERSION="0.2.0"
 PROJECT_DIR="${1:-.}"
 OUTPUT_FILE="${2:-shipsentry-report.md}"
 REPORT_BASENAME="$(basename "$OUTPUT_FILE")"
