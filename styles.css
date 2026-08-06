@@ -114,6 +114,8 @@ pre code { color: #d9f99d; font: 14px/1.9 var(--mono); }
 .address-row { margin-top: 18px; display: flex; gap: 10px; align-items: center; }
 .address-row code { flex: 1; color: var(--ink); }
 .payment-warning { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.tip-note { margin: 14px 0; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.tip-note strong { color: var(--ink); }
 .button.full { width: 100%; }
 
 footer { min-height: 120px; padding: 28px clamp(20px, 5vw, 72px); display: flex; justify-content: space-between; align-items: center; gap: 24px; background: var(--ink); color: var(--white); font-size: 12px; }

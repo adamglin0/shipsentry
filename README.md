@@ -31,6 +31,12 @@ The script reads local text files only. It does not upload source code, call an 
 
 Static matches can be false positives. A clean Lite report is not proof that an app is secure or Play-ready.
 
+## Support Lite
+
+If ShipSentry Lite saves you time, you can send an optional USDT tip on the TRON (TRC20) network to `TSg3cFixQzkczF9BJ5DqHCnE3AP3AjRhgi`.
+
+A tip is voluntary, does not purchase a service, and does not reserve an audit slot. Verify the network and address before sending; blockchain transfers are irreversible.
+
 ## Founding audit
 
 The founding audit turns the Lite output into a human-reviewed release report:
